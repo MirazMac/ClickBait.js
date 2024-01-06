@@ -1,0 +1,106 @@
+[data-bait-slot] {
+  display: flex;
+  background: var(--bait-bg, #f8f8f8);
+  color: var(--bait-color, #000);
+  border: var(--bait-border-width, 2px) var(--bait-border-style, dashed)
+    var(--bait-border-color, #bbb);
+  position: relative;
+  min-height: 100px;
+  width: 100%;
+  height: 100%;
+}
+
+[data-bait-slot]:hover {
+  text-decoration: var(--bait-underline-color, #2196f3) underline;
+  background: var(--bait-hover-bg, #ddd);
+}
+
+[data-bait-slot] h3 {
+  font-size: var(--bait-headline-size, 1.4rem);
+  font-weight: var(--bait-headline-weight, 700);
+  margin: 0 0 0.2rem;
+  line-height: var(--bait-headline-height, 1.5rem);
+}
+[data-bait-slot] h4 {
+  margin: 0 0 0.2rem;
+  font-size: var(--bait-sponsor-size, 0.8rem);
+  color: var(--bait-sponsor-color, #2196f3);
+  font-weight: var(--bait-headline-weight, 700);
+}
+[data-bait-slot] h5 {
+  margin: 0;
+  font-size: var(--bait-domain-size, 0.8rem);
+  color: var(--bait-domain-color, #274682);
+  font-weight: var(--bait-domain-weight, 500);
+}
+[data-bait-slot] .bait-img {
+  max-width: 100px;
+  height: auto;
+  position: relative;
+}
+
+[data-bait-slot] .bait-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+  background: #fff;
+}
+
+[data-bait-slot] .bait-content {
+  padding: 0.5rem;
+  flex: 1;
+}
+
+[data-bait-slot] .bait-icon {
+  height: 13px;
+  width: 13px;
+  text-align: center;
+  position: absolute;
+  right: 2px;
+  padding: 1px;
+  top: 2px;
+  background: var(--bait-icon-bg, #fff);
+}
+
+[data-bait-slot] .bait-logo {
+  font-weight: bold;
+  font-size: 10px;
+  position: absolute;
+  right: 2px;
+  padding: 1px;
+  bottom: 2px;
+  display: inline-block;
+  z-index: 10;
+  color: #bbb;
+}
+
+[data-bait-slot] .bait-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+[data-bait-slot="column"] {
+  flex-direction: column;
+}
+[data-bait-slot="column"] .bait-img {
+  max-width: 100%;
+  height: 150px;
+}
+
+@media only screen and (max-width: 767px) {
+  [data-bait-slot] {
+    flex-direction: column;
+  }
+  [data-bait-slot] .bait-img {
+    max-width: 100%;
+    height: 150px;
+  }
+  [data-bait-slot] h3 {
+    font-size: var(--bait-headline-size-sm, 1.2rem);
+    line-height: var(--bait-headline-height-sm, 1.3rem);
+  }
+}
