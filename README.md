@@ -1,7 +1,7 @@
 # ClickBait.js
 Embed random clickbait articles on your website as placeholders or simply for fun and giggles idk.
 
-![preview-min](https://github.com/MirazMac/ClickBait.js/assets/13865787/efeadd27-5365-4cb4-a4ed-7ad358087d14)
+![min](https://github.com/MirazMac/ClickBait.js/assets/13865787/878f4be4-0ad9-40f9-af0d-25cc2e39d497)
 
 
 ## Setup
