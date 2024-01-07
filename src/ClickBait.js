@@ -37,11 +37,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Nodes have been added or removed
                 const addedNodes = mutation.addedNodes;
 
-
                 [].slice.call(addedNodes).map((node) => {
-                    if (node.hasAttribute('data-bait-slot')) {
-                        insertBait(node);
+                    if (!node instanceof HTMLElement) {
+                      return;
                     }
+
+                    if (node.hasAttribute('data-bait-slot')) {
+                      insertBait(node);
+                      return;
+                    }
+
+                    [].slice.call(node.querySelectorAll('[data-bait-slot]')).map(insertBait);
                 });
             }
         }
@@ -49,6 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const observerConfig = {childList: true, subtree: true};
     const observer = new MutationObserver(mutationCallback);
-    observer.observe(document.body, observerConfig);
 
+    if (window.CLICKBAIT_JS_NO_OBSERVER === undefined) {
+      observer.observe(document.body, observerConfig);
+    }
 });
